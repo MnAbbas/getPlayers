@@ -28,7 +28,7 @@ func (players PlayerSlice) FormatOutPut() {
 
 	for index := 0; index < len(players); index++ {
 		elemnt := players[index]
-		fmt.Printf("%d. %v; %v; %v\n", index+1, elemnt.Name, elemnt.Age, strings.Join(elemnt.ListTeam[:], ","))
+		fmt.Printf("%d. %v %v; %v; %v\n", index+1, elemnt.FirstName, elemnt.LastName, elemnt.Age, strings.Join(elemnt.ListTeam[:], ","))
 
 	}
 }
