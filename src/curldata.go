@@ -39,7 +39,7 @@ type Player struct {
 	ListTeam  []string
 }
 
-//getcontent to retrieve data from url
+//Getcontent to retrieve data from url
 func (ri RetiveInfo) Getcontent(teamid uint) (string, []Player) {
 	// json data
 	url := fmt.Sprintf(ri.URL, teamid)
