@@ -44,7 +44,7 @@ func (ri RetiveInfo) Getcontent(teamid uint) (string, []Player) {
 	// json data
 	url := fmt.Sprintf(ri.URL, teamid)
 
-	timeout := time.Duration(5 * time.Second)
+	timeout := time.Duration(10 * time.Second)
 	client := http.Client{
 		Timeout: timeout,
 	}
