@@ -24,7 +24,7 @@ type RetiveInfo struct {
 
 //FindPlayers do all stuff together
 func (ri RetiveInfo) FindPlayers() PlayerSlice {
-	runtime.GOMAXPROCS(runtime.NumCPU())
+	runtime.GOMAXPROCS(3 * runtime.NumCPU())
 
 	acceptedTeams := map[string]bool{}
 

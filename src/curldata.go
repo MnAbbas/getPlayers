@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"time"
 )
 
 //Message is a message render from get url
@@ -43,8 +44,12 @@ func (ri RetiveInfo) Getcontent(teamid uint) (string, []Player) {
 	// json data
 	url := fmt.Sprintf(ri.URL, teamid)
 
-	res, err := http.Get(url)
+	timeout := time.Duration(5 * time.Second)
+	client := http.Client{
+		Timeout: timeout,
+	}
 
+	res, err := client.Get(url)
 	if err != nil {
 		wg.Done()
 		return "", []Player{}
